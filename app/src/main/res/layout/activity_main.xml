@@ -10,8 +10,8 @@
         android:id="@+id/btnBlue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/style_circular_button_blue"
         android:text="Blue"
         android:textColor="@color/White"
@@ -19,51 +19,55 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/style_circular_button_red"
+        android:text="Red"
+        android:textColor="@color/White"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBlue" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnYellow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/style_circular_button_yellow"
         android:text="Yellow"
         android:textColor="@color/Black"
-        app:layout_constraintStart_toEndOf="@+id/btnRed"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRed" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnGreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/style_circular_button_green"
         android:text="Green"
         android:textColor="@color/White"
-        app:layout_constraintStart_toEndOf="@+id/btnYellow"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnRed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/style_circular_button_red"
-        android:text="Red"
-        android:textColor="@color/White"
-        app:layout_constraintStart_toEndOf="@+id/btnBlue"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnYellow" />
 
     <ImageButton
         android:id="@+id/btnPlay"
-        android:layout_width="351dp"
-        android:layout_height="172dp"
+        android:layout_width="301dp"
+        android:layout_height="188dp"
+        android:layout_marginBottom="4dp"
         android:background="@android:color/transparent"
         android:onClick="doPlay"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/playbutton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
