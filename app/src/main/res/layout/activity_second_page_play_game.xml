@@ -13,6 +13,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="68dp"
         android:text="Y Coordinate"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLabel" />
 
@@ -20,9 +21,10 @@
         android:id="@+id/tvNorthCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="416dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="44dp"
         android:text="North Count"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/tvNorth"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,10 +32,10 @@
         android:id="@+id/tvSouthCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="44dp"
         android:text="South Count"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/tvSouth"
         app:layout_constraintTop_toBottomOf="@+id/tvNorthCount" />
 
@@ -42,8 +44,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="48dp"
         android:text="West Count"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/tvWest"
         app:layout_constraintTop_toBottomOf="@+id/tvSouthCount" />
 
@@ -52,8 +55,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="52dp"
         android:text="East Count"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/tvEast"
         app:layout_constraintTop_toBottomOf="@+id/tvWestCount" />
 
@@ -64,6 +68,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="144dp"
         android:text="X Coordinate"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -74,6 +79,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="84dp"
         android:text="Z Coordinate"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLabel1" />
 
@@ -86,6 +92,7 @@
         android:text="X Value"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/tvLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -98,6 +105,7 @@
         android:text="Y Value"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/tvLabel1"
         app:layout_constraintTop_toBottomOf="@+id/tvX" />
 
@@ -110,6 +118,7 @@
         android:text="Z Value"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/tvLabel2"
         app:layout_constraintTop_toBottomOf="@+id/tvY" />
 
@@ -117,12 +126,13 @@
         android:id="@+id/tvNorth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="128dp"
         android:text="0"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#9C27B0"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -131,11 +141,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginEnd="128dp"
         android:text="0"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#9C27B0"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNorth" />
 
@@ -144,11 +155,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginEnd="128dp"
         android:text="0"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#9C27B0"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSouth" />
 
@@ -157,12 +169,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginEnd="128dp"
         android:text="0"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#9C27B0"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWest" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/style_circular_button_blue"
+        android:text="Blue"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnYellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/style_circular_button_yellow"
+        android:text="Yellow"
+        android:textColor="@color/Black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRed" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/style_circular_button_green"
+        android:text="Green"
+        android:textColor="@color/White"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnYellow"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/style_circular_button_red"
+        android:text="Red"
+        android:textColor="@color/White"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBlue" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
