@@ -2,9 +2,11 @@ package edu.olynch.madsimongame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -123,4 +125,8 @@ public class PrintScores extends AppCompatActivity {
     }
 
 
+    public void doPlayAgain(View view) {
+        Intent playAgain = new Intent(PrintScores.this, MainActivity.class);
+        startActivity(playAgain);
+    }
 }

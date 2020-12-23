@@ -227,4 +227,9 @@ public class MainActivity extends AppCompatActivity {
         Intent testFinalPage = new Intent(view.getContext(), PrintScores.class);
         startActivity(testFinalPage);
     }
+
+    public void doTest2(View view) {
+        Intent testWritingPage = new Intent(view.getContext(), WriteScoreToDatabase.class);
+        startActivity(testWritingPage);
+    }
 }

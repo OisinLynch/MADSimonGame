@@ -10,20 +10,32 @@
         android:id="@+id/tvTopScores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:text="Top Scores"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/listScores"
-        android:layout_width="691dp"
-        android:layout_height="278dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="425dp"
+        android:layout_height="299dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTopScores" />
+
+    <Button
+        android:id="@+id/btnPlayAgain"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="176dp"
+        android:onClick="doPlayAgain"
+        android:text="Play Again"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

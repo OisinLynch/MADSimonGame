@@ -12,6 +12,7 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -26,10 +27,10 @@ public class SecondPagePlayGame extends AppCompatActivity implements SensorEvent
     private final double NORTH_MOVE_BACKWARD = 6.0;    // lower mag limit
     private final double SOUTH_MOVE_FORWARD = 4.0;
     private final double SOUTH_MOVE_BACKWARD = -2.0;
-    private final double WEST_MOVE_FORWARD = -3.0;
-    private final double WEST_MOVE_BACKWARD = 0.0;
-    private final double EAST_MOVE_FORWARD = 2.0;
-    private final double EAST_MOVE_BACKWARD = 0.0;
+    private final double WEST_MOVE_FORWARD = -4.0;
+    private final double WEST_MOVE_BACKWARD = 3.0;
+    private final double EAST_MOVE_FORWARD = 4.0;
+    private final double EAST_MOVE_BACKWARD = -3.0;
     boolean highLimit = false;      // detect high limit
     int counterNorth = 0, counterSouth = 0, counterWest = 0, counterEast = 0; // direction counters
     Button bRed, bBlue, bYellow, bGreen, fb;
@@ -40,8 +41,7 @@ public class SecondPagePlayGame extends AppCompatActivity implements SensorEvent
     private Sensor mSensor;
     int[] resultSequence = new int[120];
     int arrayIndex = 0;
-
-
+    int[] firstPageSequence;
 
 
     @Override
@@ -68,7 +68,7 @@ public class SecondPagePlayGame extends AppCompatActivity implements SensorEvent
 
         //Get the colour sequence from the first page
         Bundle extras = getIntent().getExtras();
-        int[] firstPageSequence = extras.getIntArray("colourSequence");
+        firstPageSequence = extras.getIntArray("colourSequence");
     }
 
 
@@ -90,10 +90,18 @@ public class SecondPagePlayGame extends AppCompatActivity implements SensorEvent
         mSensorManager.unregisterListener(this);    // turn off listener to save power
     }
 
-    //Check to see if result of game sequence is the same as original sequence
-    //If not move onto 3rd page for result
     public void onFinish() {
-        
+        if (resultSequence == firstPageSequence) {
+            Intent intent = new Intent(SecondPagePlayGame.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
+        else if (resultSequence != firstPageSequence) {
+                Intent toThirdPage = new Intent(SecondPagePlayGame.this, WriteScoreToDatabase.class);
+                toThirdPage.putExtra("finalScore", finalScore);
+                startActivity(toThirdPage);
+        }
+
     }
 
 
@@ -136,28 +144,28 @@ public class SecondPagePlayGame extends AppCompatActivity implements SensorEvent
             tvSouth.setText(String.valueOf(counterSouth));
             highLimit = false;
 
-        } else if ((y > WEST_MOVE_FORWARD) && (highLimit == false)) {
+        } else if ((y < WEST_MOVE_FORWARD) && (highLimit == false)) {
             highLimit = true;
 
-        } else if ((y < WEST_MOVE_BACKWARD) && (highLimit == true)) {
+        } else if ((y > WEST_MOVE_BACKWARD) && (highLimit == true)) {
             // we have a tilt to the west
             counterWest++;
-            flashButton(bBlue);
-            resultSequence[arrayIndex++] = BLUE;
-            finalScore++;
-            tvWest.setText(String.valueOf(counterWest));
-            highLimit = false;
-
-        } else if ((y > EAST_MOVE_FORWARD) && (highLimit == false)) {
-            highLimit = true;
-
-        } else if ((y < EAST_MOVE_BACKWARD) && (highLimit == true)) {
-            // we have a tilt to the east
-            counterEast++;
             flashButton(bGreen);
             resultSequence[arrayIndex++] = GREEN;
             finalScore++;
-            tvEast.setText(String.valueOf(counterEast));
+            tvEast.setText(String.valueOf(counterWest));
+            highLimit = false;
+
+        } else if ((y < EAST_MOVE_FORWARD) && (highLimit == false)) {
+            highLimit = true;
+
+        } else if ((y > EAST_MOVE_BACKWARD) && (highLimit == true)) {
+            // we have a tilt to the east
+            counterEast++;
+            flashButton(bBlue);
+            resultSequence[arrayIndex++] = BLUE;
+            finalScore++;
+            tvWest.setText(String.valueOf(counterEast));
             highLimit = false;
         }
     }
@@ -197,6 +205,19 @@ public class SecondPagePlayGame extends AppCompatActivity implements SensorEvent
             } // end runnable
         };
         handler.postDelayed(r, 600);
+    }
+
+    public void doFinish2(View view) {
+        if (resultSequence == firstPageSequence) {
+            Intent intent = new Intent(SecondPagePlayGame.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
+        else if (resultSequence != firstPageSequence) {
+            Intent toThirdPage = new Intent(SecondPagePlayGame.this, WriteScoreToDatabase.class);
+            toThirdPage.putExtra("finalScore", finalScore);
+            startActivity(toThirdPage);
+        }
     }
 
 }
