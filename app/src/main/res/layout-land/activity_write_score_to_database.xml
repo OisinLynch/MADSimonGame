@@ -49,7 +49,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="48dp"
         android:onClick="doDone"
-        android:text="Done"
+        android:text="Add Score"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayAgain2" />

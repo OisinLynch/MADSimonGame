@@ -219,6 +219,10 @@ public class SecondPagePlayGame extends AppCompatActivity implements SensorEvent
             toThirdPage.putExtra("finalScore", finalScore);
             startActivity(toThirdPage);
         }
+        /*else if (resultSequence != firstPageSequence && finalScore <= 2) {
+            Intent toFourthPage = new Intent(SecondPagePlayGame.this, PrintScores.class);
+            startActivity(toFourthPage);
+        }*/
     }
 
 }
