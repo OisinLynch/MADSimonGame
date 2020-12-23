@@ -22,7 +22,7 @@
         android:id="@+id/btnYellow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="112dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/style_circular_button_yellow"
         android:text="Yellow"
@@ -34,7 +34,7 @@
         android:id="@+id/btnGreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/style_circular_button_green"
         android:text="Green"
@@ -46,8 +46,8 @@
         android:id="@+id/btnRed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/style_circular_button_red"
         android:text="Red"
         android:textColor="@color/White"
@@ -63,7 +63,6 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/playbutton" />
 
@@ -75,6 +74,7 @@
         android:layout_marginBottom="64dp"
         android:onClick="doTest"
         android:text="Test"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -86,6 +86,7 @@
         android:layout_marginBottom="64dp"
         android:onClick="doTest2"
         android:text="Test2"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

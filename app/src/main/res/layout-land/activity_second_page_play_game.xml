@@ -229,9 +229,9 @@
 
     <Button
         android:id="@+id/btnFinish2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_width="120dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="244dp"
         android:layout_marginEnd="68dp"
         android:onClick="doFinish2"
         android:text="Finish"

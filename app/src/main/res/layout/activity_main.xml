@@ -79,6 +79,7 @@
         android:layout_marginBottom="64dp"
         android:onClick="doTest"
         android:text="Test"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -90,6 +91,7 @@
         android:layout_marginBottom="64dp"
         android:onClick="doTest2"
         android:text="Test2"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

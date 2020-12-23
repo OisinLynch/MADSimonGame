@@ -27,10 +27,10 @@ public class SecondPagePlayGame extends AppCompatActivity implements SensorEvent
     private final double NORTH_MOVE_BACKWARD = 6.0;    // lower mag limit
     private final double SOUTH_MOVE_FORWARD = 4.0;
     private final double SOUTH_MOVE_BACKWARD = -2.0;
-    private final double WEST_MOVE_FORWARD = -4.0;
-    private final double WEST_MOVE_BACKWARD = 3.0;
-    private final double EAST_MOVE_FORWARD = 4.0;
-    private final double EAST_MOVE_BACKWARD = -3.0;
+    private final double WEST_MOVE_FORWARD = -3.0;
+    private final double WEST_MOVE_BACKWARD = 2.0;
+    private final double EAST_MOVE_FORWARD = 3.0;
+    private final double EAST_MOVE_BACKWARD = -2.0;
     boolean highLimit = false;      // detect high limit
     int counterNorth = 0, counterSouth = 0, counterWest = 0, counterEast = 0; // direction counters
     Button bRed, bBlue, bYellow, bGreen, fb;
@@ -146,21 +146,22 @@ public class SecondPagePlayGame extends AppCompatActivity implements SensorEvent
 
         } else if ((y < WEST_MOVE_FORWARD) && (highLimit == false)) {
             highLimit = true;
-
-        } else if ((y > WEST_MOVE_BACKWARD) && (highLimit == true)) {
-            // we have a tilt to the west
+        }
+        else if ((y > WEST_MOVE_BACKWARD) && (highLimit == true)) {
+            // we have a tilt to the north
             counterWest++;
             flashButton(bGreen);
             resultSequence[arrayIndex++] = GREEN;
             finalScore++;
             tvEast.setText(String.valueOf(counterWest));
             highLimit = false;
+        }
 
-        } else if ((y < EAST_MOVE_FORWARD) && (highLimit == false)) {
+        else if ((y > EAST_MOVE_FORWARD) && (highLimit == false)) {
             highLimit = true;
-
-        } else if ((y > EAST_MOVE_BACKWARD) && (highLimit == true)) {
-            // we have a tilt to the east
+        }
+        else if ((y < EAST_MOVE_BACKWARD) && (highLimit == true)) {
+            // we have a tilt to the north
             counterEast++;
             flashButton(bBlue);
             resultSequence[arrayIndex++] = BLUE;

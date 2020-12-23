@@ -28,7 +28,7 @@ public class WriteScoreToDatabase extends AppCompatActivity {
         btnFinish = findViewById(R.id.btnFinish);
         score = findViewById(R.id.tvScore);
 
-        yourScore = getIntent().getIntExtra("finalScore", 4 );
+        yourScore = getIntent().getIntExtra("finalScore", 0 );
 
         score.setText(String.valueOf(yourScore));
 
